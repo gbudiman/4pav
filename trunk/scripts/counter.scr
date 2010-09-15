@@ -1,0 +1,2 @@
+#!/bin/csh -f
+dc_shell-t -f ./scripts/counter.fcr | tee counter.log

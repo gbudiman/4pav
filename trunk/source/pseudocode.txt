@@ -1,0 +1,16 @@
+idle:			if (data_ready = 0) goto idle
+sort1:			err = 0
+				reg[4] = reg[3]
+sort2:			reg[3] = reg[2]
+sort3:			reg[2] = reg[1]
+store:			reg[1] = data
+add1:			reg[0] = reg[1] + reg[2]
+				if (V=1) goto eidle
+add2:			reg[0] = reg[0] + reg[3]
+				if (V=1) goto eidle
+add3:			reg[0] = reg[0] + reg[4]
+				if (V=1) goto eidle
+				goto idle
+eidle:			err = 1
+				if (data_ready = 1) goto sort
+				if (data_ready = 0) goto eidle

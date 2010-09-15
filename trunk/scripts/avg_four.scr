@@ -1,0 +1,2 @@
+#!/bin/csh -f
+dc_shell-t -f ./scripts/avg_four.fcr | tee avg_four.log
